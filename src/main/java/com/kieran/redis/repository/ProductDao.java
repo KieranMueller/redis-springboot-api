@@ -22,11 +22,12 @@ public class ProductDao {
     }
 
     public List<Product> findAll() {
+        System.out.println("In findAll()");
         return template.opsForHash().values(HASH_KEY);
     }
 
     public Product findById(Long id) {
-        System.out.println("Called findById() in ProductDao");
+        System.out.println("In findById()");
         var product = template.opsForHash().get(HASH_KEY, id);
         if (product == null) throw new RuntimeException();
         return (Product) template.opsForHash().get(HASH_KEY, id);
