@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "41d28d02-5c91-4d51-999e-da6519fd1cc9",
+		"name": "Redis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26504106"
+	},
+	"item": [
+		{
+			"name": "GET all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/products"
+			},
+			"response": []
+		},
+		{
+			"name": "GET by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "POST product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"playdough\",\r\n    \"quantity\": 22,\r\n    \"price\": 12.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/products"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/products/10"
+			},
+			"response": []
+		}
+	]
+}
