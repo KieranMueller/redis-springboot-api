@@ -3,12 +3,15 @@ package com.kieran.redis.controller;
 import com.kieran.redis.entity.Product;
 import com.kieran.redis.repository.ProductDao;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@EnableCaching
 @RequestMapping("products")
 public class ProductController {
 
@@ -20,6 +23,7 @@ public class ProductController {
     }
 
     @GetMapping("{id}")
+    @Cacheable(key = "#id", value = "Product")
     public Product findById(@PathVariable Long id) {
         return productDao.findById(id);
     }
