@@ -1,2 +1,2 @@
 # redis-springboot-api
-Messing with Redis
+Messing with Redis, caching
